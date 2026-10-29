@@ -34,7 +34,7 @@ The bigger the pack, the bigger the gain: packs with thousands of files, custom 
 - **Zip index:** vanilla scans every file of a zipped pack for each lookup. SpeedPack indexes the pack once.
 - **Lazy font tables:** big packs ship thousands of custom fonts. Vanilla rebuilds a glyph table for every one of them on the render thread at each reload (this alone froze the game for ~18 s on the test server). SpeedPack builds a font's table the first time it is actually used.
 - **Font warm-up once:** font providers shared by many fonts are pre-warmed once instead of once per font.
-- **Shader cache:** linked shader programs are cached on disk, so packs with custom shaders do not have to wait for the graphics driver to recompile them every time.
+- **Shader cache** (Minecraft 1.21.5 and later): linked shader programs are cached on disk, so packs with custom shaders do not have to wait for the graphics driver to recompile them every time.
 - **Shorter loading screen:** vanilla keeps the Mojang screen (and blocks input) for about 2 s after loading has finished, and at least 1 s for in-game reloads. SpeedPack keeps a short 0.3 s fade. This applies to every reload: startup, pack menu, `F3 + T`, servers.
 
 Nothing about how packs look is changed.
