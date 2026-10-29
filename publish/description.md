@@ -11,11 +11,11 @@ Server packs and the packs you pick yourself go through the exact same resource 
 
 > **Minecraft 1.21 → 26.3** · Fabric · client-side · [report an issue](https://github.com/AnaNazzDev/SpeedPack/issues)
 
-![SpeedPack vs vanilla](GIF_URL)
+![SpeedPack vs vanilla](https://i.imgur.com/szizSbr.gif)
 
 ## Results
 
-![Results](RESULTS_URL)
+![Results](https://i.imgur.com/jU63k4q.png)
 
 Resource reload times measured when joining a real server (24,000-file / 25 MB server resource pack, 20 CPU threads):
 
@@ -29,7 +29,7 @@ The bigger the pack, the bigger the gain: packs with thousands of files, custom 
 
 ## What it does
 
-![Features](FEATURES_URL)
+![Features](https://i.imgur.com/oOqzdqP.png)
 
 - **Zip index:** vanilla scans every file of a zipped pack for each lookup. SpeedPack indexes the pack once.
 - **Lazy font tables:** big packs ship thousands of custom fonts. Vanilla rebuilds a glyph table for every one of them on the render thread at each reload (this alone froze the game for ~18 s on the test server). SpeedPack builds a font's table the first time it is actually used.
