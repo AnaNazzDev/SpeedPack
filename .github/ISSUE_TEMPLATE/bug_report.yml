@@ -1,0 +1,94 @@
+name: 🐞 Bug report
+description: Crash, visual glitch (text, fonts, shaders), mod conflict or anything that does not work as it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this!
+        **Tip:** every optimization can be turned off in `config/speedpack.properties` (restart the game after editing). Finding which one causes the problem helps a lot.
+
+  - type: dropdown
+    id: mc-version
+    attributes:
+      label: Minecraft version
+      options:
+        - "26.3"
+        - "26.2"
+        - "26.1.x"
+        - "1.21.11"
+        - "1.21.9 / 1.21.10"
+        - "1.21.5 to 1.21.8"
+        - "1.21.2 to 1.21.4"
+        - "1.21 / 1.21.1"
+    validations:
+      required: true
+
+  - type: input
+    id: speedpack-version
+    attributes:
+      label: SpeedPack version
+      placeholder: "e.g. 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: loader-version
+    attributes:
+      label: Fabric Loader version
+      placeholder: "e.g. 0.20.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead? Screenshots are welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to reproduce
+      description: Step by step. Include the resource pack or server if it only happens with one.
+      placeholder: |
+        1. Enable pack X in the Resource Packs menu
+        2. Press F3 + T
+        3. ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: option
+    attributes:
+      label: Which option makes the problem go away when set to false?
+      options:
+        - I did not try
+        - None of them
+        - zipIndex
+        - lazyFonts
+        - fontWarmOnce
+        - shaderCache
+        - fastLoadingScreen
+    validations:
+      required: true
+
+  - type: textarea
+    id: mods
+    attributes:
+      label: Mod list
+      description: Your mods folder content, or the modpack name and version.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        Attach `logs/latest.log` (drag and drop the file here), and the crash report from `crash-reports/` if the game crashed.
+        You can also paste a link from https://mclo.gs.
+    validations:
+      required: true

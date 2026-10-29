@@ -1,0 +1,79 @@
+name: 🐢 Still slow loading
+description: A resource pack, server or reload that still takes a long time with SpeedPack installed.
+labels: ["performance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        SpeedPack has a built-in profiler that shows exactly where the time goes. With it, slow loads can usually be fixed.
+        1. In `config/speedpack.properties`, set `diagnostics=true` and restart the game.
+        2. Reproduce the slow load once (join the server, enable the pack, press F3 + T...).
+        3. Zip the `speedpack/` folder from your game directory and attach it below.
+        4. Set `diagnostics=false` again afterwards.
+
+  - type: dropdown
+    id: mc-version
+    attributes:
+      label: Minecraft version
+      options:
+        - "26.3"
+        - "26.2"
+        - "26.1.x"
+        - "1.21.11"
+        - "1.21.9 / 1.21.10"
+        - "1.21.5 to 1.21.8"
+        - "1.21.2 to 1.21.4"
+        - "1.21 / 1.21.1"
+    validations:
+      required: true
+
+  - type: input
+    id: speedpack-version
+    attributes:
+      label: SpeedPack version
+    validations:
+      required: true
+
+  - type: dropdown
+    id: when
+    attributes:
+      label: When is it slow?
+      multiple: true
+      options:
+        - Joining a server (server resource pack)
+        - Leaving a server
+        - Enabling / switching packs in the Resource Packs menu
+        - F3 + T
+        - Game startup
+    validations:
+      required: true
+
+  - type: input
+    id: duration
+    attributes:
+      label: How long does it take?
+      placeholder: "e.g. about 15 seconds"
+    validations:
+      required: true
+
+  - type: textarea
+    id: pack
+    attributes:
+      label: Which pack or server?
+      description: Pack name and link, or the server address if it uses a server resource pack.
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Attach the zipped `speedpack/` folder and `logs/latest.log`.
+    validations:
+      required: true
+
+  - type: textarea
+    id: pc
+    attributes:
+      label: PC
+      description: CPU, GPU, RAM given to Minecraft. Optional but helpful.

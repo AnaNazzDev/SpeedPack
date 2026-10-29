@@ -1,0 +1,17 @@
+name: 💡 Feature idea
+description: Something SpeedPack could make faster, or a setting you would like.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What should SpeedPack do, and when would it help you?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else?
+      description: Packs, servers, mods or screenshots that show the problem.

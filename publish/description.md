@@ -9,13 +9,15 @@
 
 Server packs and the packs you pick yourself go through the exact same resource reload, so every optimization below applies to all of them.
 
+> **Minecraft 1.21 → 26.3** · Fabric · client-side · [report an issue](https://github.com/AnaNazzDev/SpeedPack/issues)
+
 ![SpeedPack vs vanilla](GIF_URL)
 
 ## Results
 
 ![Results](RESULTS_URL)
 
-Resource reload times measured when joining a real server (24,000-file / 25 MB server resource pack, GTX 1080, 20 CPU threads):
+Resource reload times measured when joining a real server (24,000-file / 25 MB server resource pack, 20 CPU threads):
 
 | | Vanilla | SpeedPack |
 |---|---|---|
@@ -40,6 +42,13 @@ Nothing about how packs look is changed.
 ## FAQ
 
 <details>
+<summary><b>Which Minecraft versions are supported?</b></summary>
+
+**26.1, 26.2 and 26.3** are fully tested. **1.21 to 1.21.11** are supported and built from the same code, but tested less: it should work, and if anything goes wrong please [open an issue](https://github.com/AnaNazzDev/SpeedPack/issues) so it can be fixed quickly.
+
+</details>
+
+<details>
 <summary><b>Do I need it on the server?</b></summary>
 
 No. It is client-side only. Install it on your game and it works on any server and in singleplayer.
@@ -49,7 +58,7 @@ No. It is client-side only. Install it on your game and it works on any server a
 <details>
 <summary><b>Does it work with Sodium?</b></summary>
 
-Yes, it was tested with Sodium and ImmediatelyFast.
+Yes, it was tested with Sodium.
 
 </details>
 
@@ -77,7 +86,7 @@ No. It only changes *when* work is done during loading, not what is loaded.
 <details>
 <summary><b>Something looks wrong. What do I do?</b></summary>
 
-Turn off the matching option in `config/speedpack.properties` (fonts → `lazyFonts`, shaders → `shaderCache`, etc.), then open an issue with `diagnostics=true` and the `speedpack/` folder attached.
+Turn off the matching option in `config/speedpack.properties` (fonts → `lazyFonts`, shaders → `shaderCache`, etc.) to get going again, then [open an issue on GitHub](https://github.com/AnaNazzDev/SpeedPack/issues/new/choose) so it gets fixed for everyone. See *Found a bug?* below for what to include.
 
 </details>
 
@@ -105,5 +114,24 @@ Restart the game after editing. `diagnostics=true` writes reload profiles to the
 
 ## Compatibility
 
-- Fabric, Minecraft 26.1 to 26.3, Fabric API required.
+| Minecraft | Status |
+|---|---|
+| **26.1 · 26.2 · 26.3** | ✅ Tested |
+| **1.21 → 1.21.11** | ⚠️ Supported, less tested: issues can happen, please report them |
+
+- Fabric Loader + Fabric API required.
 - Client-side only: works in singleplayer and on any server.
+- Works alongside Sodium and Iris.
+
+## Found a bug? 🐞
+
+Please report it on **[GitHub Issues](https://github.com/AnaNazzDev/SpeedPack/issues/new/choose)**, not in the Modrinth comments: issues are tracked there and fixed faster.
+
+To get it fixed quickly, include:
+1. Your **Minecraft**, **SpeedPack** and **Fabric Loader** versions.
+2. Your **mod list** (or modpack name).
+3. **`logs/latest.log`**, and the crash report if the game crashed.
+4. Which **config option** makes the problem go away when set to `false`, if you found one.
+5. For a slow load: set `diagnostics=true`, reproduce it once, and attach the zipped **`speedpack/`** folder from your game directory.
+
+Ready-made forms (bug, slow loading, feature idea) are waiting on the issues page.
