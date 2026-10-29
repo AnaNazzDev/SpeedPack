@@ -1,4 +1,4 @@
-![SpeedPack](BANNER_URL)
+![SpeedPack](https://i.imgur.com/BIX6trx.png)
 
 **Resource packs load faster, everywhere.** SpeedPack is a client-side Fabric mod that cuts the time Minecraft spends reloading resources:
 

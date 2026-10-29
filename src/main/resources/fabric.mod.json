@@ -6,9 +6,11 @@
 	"description": "Makes resource pack loading faster: joining servers with big server packs, switching packs, F3+T.",
 	"authors": ["AnaNazz"],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/speedpack"
+		"homepage": "https://modrinth.com/mod/packspeed",
+		"sources": "https://github.com/AnaNazzDev/SpeedPack",
+		"issues": "https://github.com/AnaNazzDev/SpeedPack/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/speedpack/icon.png",
 	"environment": "client",
 	"accessWidener": "speedpack.accesswidener",
