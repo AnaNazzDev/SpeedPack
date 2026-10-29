@@ -49,6 +49,22 @@ Nothing about how packs look is changed.
 </details>
 
 <details>
+<summary><b>Why is the first load slower than the next ones?</b></summary>
+
+That is normal: the first time, SpeedPack **builds its shader cache**. Shaders are compiled once and saved to the `speedpack/shader-cache` folder.
+
+**From the second launch on, it is fast:** shaders are loaded straight from the cache instead of being compiled again.
+
+The cache is rebuilt once (and only once) when something really changes:
+- a resource pack with different shaders,
+- a graphics driver update,
+- a new Minecraft version.
+
+The other optimizations (zip index, fonts, loading screen) work from the very first load. When you join a server, the first join also includes downloading its resource pack, which depends on your connection and the server, not on SpeedPack.
+
+</details>
+
+<details>
 <summary><b>Do I need it on the server?</b></summary>
 
 No. It is client-side only. Install it on your game and it works on any server and in singleplayer.
