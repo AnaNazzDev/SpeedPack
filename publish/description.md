@@ -39,26 +39,54 @@ Nothing about how packs look is changed.
 
 ## FAQ
 
-**Do I need it on the server?**
+<details>
+<summary><b>Do I need it on the server?</b></summary>
+
 No. It is client-side only. Install it on your game and it works on any server and in singleplayer.
 
-**Does it work with Sodium?**
+</details>
+
+<details>
+<summary><b>Does it work with Sodium?</b></summary>
+
 Yes, it was tested with Sodium and ImmediatelyFast.
 
-**Does it work with Iris / shaderpacks?**
+</details>
+
+<details>
+<summary><b>Does it work with Iris / shaderpacks?</b></summary>
+
 Yes. If you ever see a shader problem, set `shaderCache=false` in the config and please report it.
 
-**Forge / NeoForge?**
+</details>
+
+<details>
+<summary><b>Forge / NeoForge?</b></summary>
+
 No, Fabric only for now.
 
-**Will it change how my packs look?**
+</details>
+
+<details>
+<summary><b>Will it change how my packs look?</b></summary>
+
 No. It only changes *when* work is done during loading, not what is loaded.
 
-**Something looks wrong. What do I do?**
+</details>
+
+<details>
+<summary><b>Something looks wrong. What do I do?</b></summary>
+
 Turn off the matching option in `config/speedpack.properties` (fonts → `lazyFonts`, shaders → `shaderCache`, etc.), then open an issue with `diagnostics=true` and the `speedpack/` folder attached.
 
-**Is it safe to remove?**
+</details>
+
+<details>
+<summary><b>Is it safe to remove?</b></summary>
+
 Yes. It saves nothing into your worlds. You can delete the `speedpack/` folder (shader cache) at any time.
+
+</details>
 
 ## Configuration
 
