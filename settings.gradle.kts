@@ -16,7 +16,7 @@ plugins {
 stonecutter {
 	create(rootProject) {
 		// One jar per entry; Modrinth game versions for each are in stonecutter.properties.toml
-		versions("26.1.2", "26.2", "26.3")
+		versions("1.21.1", "1.21.4", "1.21.8", "1.21.10", "1.21.11", "26.1.2", "26.2", "26.3")
 		vcsVersion = "26.3"
 	}
 }

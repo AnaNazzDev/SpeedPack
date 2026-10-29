@@ -35,9 +35,14 @@ public class SpeedPackMixinPlugin implements IMixinConfigPlugin {
 	@Override
 	public void acceptTargets(Set<String> myTargets, Set<String> otherTargets) {}
 
+	/** Mixins whose target only exists in some Minecraft versions, so they are not listed in the json. */
 	@Override
 	public List<String> getMixins() {
-		return null;
+		//? if >=1.21.5 {
+		return List.of("GlProgramMixin");
+		//?} else {
+		/*return null;
+		*///?}
 	}
 
 	@Override

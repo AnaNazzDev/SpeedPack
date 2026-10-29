@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.mojang.renderpearl.backend.opengl.GlProgram;
 import com.mojang.renderpearl.backend.opengl.GlShaderModule;
-//?} else {
+//?} else if >=1.21.5 {
 /*import com.mojang.blaze3d.opengl.GlProgram;
 import com.mojang.blaze3d.opengl.GlShaderModule;
 import com.mojang.blaze3d.vertex.VertexFormat;
@@ -17,7 +17,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+// GlProgram exists since 1.21.5; SpeedPackMixinPlugin only registers this mixin there.
+//? if >=1.21.5 {
 @Mixin(GlProgram.class)
+//?}
 public abstract class GlProgramMixin {
 	//? if >=26.3 {
 	@Inject(method = "link", at = @At("HEAD"))
@@ -42,7 +45,7 @@ public abstract class GlProgramMixin {
 	private static void speedpack$link(int program) {
 		ProgramBinaryCache.link(program);
 	}
-	*///?} else {
+	*///?} else if >=1.21.5 {
 	/*@Inject(method = "link", at = @At("HEAD"))
 	private static void speedpack$begin(GlShaderModule vertex, GlShaderModule fragment, VertexFormat vertexFormat,
 		String label, CallbackInfoReturnable<GlProgram> cir) {

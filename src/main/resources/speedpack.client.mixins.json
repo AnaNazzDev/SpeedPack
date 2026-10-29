@@ -3,7 +3,7 @@
 	"package": "dev.speedpack.client.mixin",
 	"plugin": "dev.speedpack.client.SpeedPackMixinPlugin",
 	"compatibilityLevel": "JAVA_${java}",
-	"client": ["FilePackResourcesMixin", "FontManagerMixin", "FontSetMixin", "GlProgramMixin", "LoadingOverlayMixin", "ReloadableResourceManagerMixin", "SimpleReloadInstanceMixin", "ProfiledReloadInstanceMixin"],
+	"client": ["FilePackResourcesMixin", "FontManagerMixin", "FontSetMixin", "LoadingOverlayMixin", "ReloadableResourceManagerMixin", "SimpleReloadInstanceMixin", "ProfiledReloadInstanceMixin"],
 	"injectors": {
 		"defaultRequire": 1
 	}

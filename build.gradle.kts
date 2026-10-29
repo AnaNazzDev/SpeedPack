@@ -22,7 +22,8 @@ dependencies {
 }
 
 loom {
-	accessWidenerPath = rootProject.file("src/main/resources/speedpack.accesswidener")
+	// Header namespace differs between obfuscated and 26.1+ versions (replacement in stonecutter.gradle.kts)
+	accessWidenerPath = sc.process(rootProject.file("src/main/resources/speedpack.accesswidener"), "build/processed.accesswidener")
 
 	runConfigs.all {
 		preferGradleTask = true

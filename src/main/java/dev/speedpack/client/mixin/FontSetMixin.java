@@ -63,8 +63,21 @@ public abstract class FontSetMixin {
 		this.speedpack$ensureSelected();
 	}
 
+	//? if >=1.21.9 {
 	@Inject(method = "getRandomGlyph", at = @At("HEAD"))
 	private void speedpack$beforeRandom(net.minecraft.util.RandomSource random, int width, CallbackInfoReturnable<?> cir) {
 		this.speedpack$ensureSelected();
 	}
+	//?} else {
+	/*@Inject(method = "getRandomGlyph", at = @At("HEAD"))
+	private void speedpack$beforeRandom(com.mojang.blaze3d.font.GlyphInfo glyph, CallbackInfoReturnable<?> cir) {
+		this.speedpack$ensureSelected();
+	}
+
+	// Before 1.21.9 baked glyphs are also built straight from activeProviders.
+	@Inject(method = "computeBakedGlyph", at = @At("HEAD"))
+	private void speedpack$beforeBake(int codepoint, CallbackInfoReturnable<?> cir) {
+		this.speedpack$ensureSelected();
+	}
+	*///?}
 }

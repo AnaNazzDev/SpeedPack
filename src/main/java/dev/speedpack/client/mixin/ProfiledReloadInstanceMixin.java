@@ -29,9 +29,19 @@ public abstract class ProfiledReloadInstanceMixin {
 		StackSampler.stopAndWrite("reload-" + idx);
 		StringBuilder sb = new StringBuilder();
 		for (ProfiledReloadInstance.State s : states) {
+			//? if >=1.21.5 {
 			sb.append(idx).append('\t').append(s.name()).append('\t')
 				.append(s.preparationNanos().get() / 1_000_000).append('\t').append(s.preparationCount().get()).append('\t')
 				.append(s.reloadNanos().get() / 1_000_000).append('\t').append(s.reloadCount().get()).append('\n');
+			//?} else if >=1.21.2 {
+			/*sb.append(idx).append('\t').append(s.name()).append('\t')
+				.append(s.preparationNanos().get() / 1_000_000).append("\t-\t")
+				.append(s.reloadNanos().get() / 1_000_000).append("\t-\n");
+			*///?} else {
+			/*sb.append(idx).append('\t').append(s.name).append('\t')
+				.append(s.preparationNanos.get() / 1_000_000).append("\t-\t")
+				.append(s.reloadNanos.get() / 1_000_000).append("\t-\n");
+			*///?}
 		}
 		try {
 			var f = Out.dir().resolve("reload-listeners.tsv");

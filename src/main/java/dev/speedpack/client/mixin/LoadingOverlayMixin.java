@@ -16,6 +16,7 @@ public abstract class LoadingOverlayMixin {
 	private static final float SPEEDPACK$FADE_IN_MS = 100.0f;
 	private static final long SPEEDPACK$MIN_FADE_IN_MS = 100L;
 
+	//? if >=26.1 {
 	@ModifyConstant(method = "extractRenderState", constant = @Constant(floatValue = 1000.0f))
 	private float speedpack$fadeOut(float original) {
 		return SPEEDPACK$FADE_OUT_MS;
@@ -25,9 +26,23 @@ public abstract class LoadingOverlayMixin {
 	private float speedpack$fadeIn(float original) {
 		return SPEEDPACK$FADE_IN_MS;
 	}
+	//?} else {
+	/*@ModifyConstant(method = "render", constant = @Constant(floatValue = 1000.0f))
+	private float speedpack$fadeOut(float original) {
+		return SPEEDPACK$FADE_OUT_MS;
+	}
 
+	@ModifyConstant(method = "render", constant = @Constant(floatValue = 500.0f))
+	private float speedpack$fadeIn(float original) {
+		return SPEEDPACK$FADE_IN_MS;
+	}
+	*///?}
+
+	// The minimum in-game fade-in only exists since 1.21.9.
+	//? if >=1.21.9 {
 	@ModifyConstant(method = "isReadyToFadeOut", constant = @Constant(longValue = 1000L))
 	private long speedpack$minFadeIn(long original) {
 		return SPEEDPACK$MIN_FADE_IN_MS;
 	}
+	//?}
 }

@@ -19,7 +19,7 @@ import java.util.List;
 
 import com.mojang.renderpearl.backend.opengl.GlShaderModule;
 import com.mojang.renderpearl.backend.opengl.GlStateManager;
-//?} else {
+//?} else if >=1.21.5 {
 /*import com.mojang.blaze3d.opengl.GlShaderModule;
 import com.mojang.blaze3d.opengl.GlStateManager;
 import com.mojang.blaze3d.vertex.VertexFormat;
@@ -104,7 +104,7 @@ public final class ProgramBinaryCache {
 			pendingKey = null;
 		}
 	}
-	//?} else {
+	//?} else if >=1.21.5 {
 	/*public static void begin(GlShaderModule vertex, GlShaderModule fragment, VertexFormat[] vertexFormats, String label) {
 		pendingKey = null;
 		if (!supported()) return;
@@ -113,7 +113,7 @@ public final class ProgramBinaryCache {
 			update(md, driverId);
 			update(md, label);
 			for (VertexFormat format : vertexFormats) {
-				updateAttributes(md, format);
+				if (format != null) updateAttributes(md, format); // null entries are skipped by link too
 				update(md, "|");
 			}
 			update(md, GL20C.glGetShaderSource(vertex.getShaderId()));
@@ -126,11 +126,11 @@ public final class ProgramBinaryCache {
 	*///?}
 
 	// The attribute names GlProgram.link binds for this format.
-	//? if <26.2 {
+	//? if >=1.21.5 && <26.2 {
 	/*private static void updateAttributes(MessageDigest md, VertexFormat format) {
 		for (String name : format.getElementAttributeNames()) update(md, name);
 	}
-	*///?} else if <26.3 {
+	*///?} else if >=26.2 && <26.3 {
 	/*private static void updateAttributes(MessageDigest md, VertexFormat format) {
 		for (VertexFormatElement element : format.getElements()) update(md, element.name());
 	}
@@ -142,6 +142,7 @@ public final class ProgramBinaryCache {
 	}
 
 	/** Replaces GlStateManager.glLinkProgram inside GlProgram.link. */
+	//? if >=1.21.5 {
 	public static void link(int program) {
 		long start = System.nanoTime();
 		String key = pendingKey;
@@ -163,6 +164,7 @@ public final class ProgramBinaryCache {
 			linkNanos += System.nanoTime() - start;
 		}
 	}
+	//?}
 
 	private static boolean tryLoad(int program, String key) {
 		Path file = dir.resolve(key + ".bin");

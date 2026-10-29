@@ -1,6 +1,6 @@
 # SpeedPack
 
-Client-side Fabric mod (Minecraft 26.1 to 26.3) that makes resource packs load faster: joining servers with big server resource packs, enabling or switching packs, `F3 + T`, game startup and the Mojang loading screen.
+Client-side Fabric mod (Minecraft 1.21 to 26.3) that makes resource packs load faster: joining servers with big server resource packs, enabling or switching packs, `F3 + T`, game startup and the Mojang loading screen.
 
 Measured when joining a server with a 24,000-file / 25 MB resource pack:
 
@@ -15,7 +15,7 @@ Measured when joining a server with a 24,000-file / 25 MB resource pack:
 - **Zip index** (`FilePackResourcesMixin`): zipped packs are indexed once instead of scanning every entry on each lookup.
 - **Lazy font tables** (`FontSetMixin`): a font's glyph table is built on first use instead of for every font at each reload.
 - **Font warm-up once** (`FontManagerMixin`): shared font providers are pre-warmed once instead of once per font.
-- **Shader cache** (`GlProgramMixin`, `ProgramBinaryCache`): linked GL programs are cached on disk with `glProgramBinary`.
+- **Shader cache** (`GlProgramMixin`, `ProgramBinaryCache`): linked GL programs are cached on disk with `glProgramBinary` (Minecraft 1.21.5 and later).
 - **Shorter loading screen** (`LoadingOverlayMixin`): 0.3 s fade instead of ~2 s after loading ends.
 
 Each feature can be turned off in `config/speedpack.properties`.
