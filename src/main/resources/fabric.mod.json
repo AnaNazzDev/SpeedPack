@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "speedpack",
+	"version": "${version}",
+	"name": "SpeedPack",
+	"description": "Makes resource pack loading faster: joining servers with big server packs, switching packs, F3+T.",
+	"authors": ["AnaNazz"],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/speedpack"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/speedpack/icon.png",
+	"environment": "client",
+	"accessWidener": "speedpack.accesswidener",
+	"entrypoints": {
+		"preLaunch": ["dev.speedpack.client.SpeedPackPreLaunch"],
+		"client": ["dev.speedpack.client.SpeedPackClient"]
+	},
+	"mixins": [
+		{
+			"config": "speedpack.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "${minecraft}",
+		"java": ">=${java}",
+		"fabric-api": "*"
+	}
+}

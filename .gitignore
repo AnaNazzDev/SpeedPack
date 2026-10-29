@@ -1,0 +1,25 @@
+# Gradle / Loom / Stonecutter
+.gradle/
+build/
+versions/*/build/
+versions/*/.gradle/
+out/
+run/
+versions/*/run/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+bin/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Modrinth images are uploaded to Modrinth; the page text stays tracked
+publish/*
+!publish/description.md
