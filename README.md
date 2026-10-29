@@ -2,6 +2,8 @@
 
 Client-side Fabric mod (Minecraft 1.21 to 26.3) that makes resource packs load faster: joining servers with big server resource packs, enabling or switching packs, `F3 + T`, game startup and the Mojang loading screen.
 
+**Download: [modrinth.com/mod/packspeed](https://modrinth.com/mod/packspeed)**
+
 Measured when joining a server with a 24,000-file / 25 MB resource pack:
 
 | | Vanilla | SpeedPack |
